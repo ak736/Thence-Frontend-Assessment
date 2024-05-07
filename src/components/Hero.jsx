@@ -15,7 +15,7 @@ const Hero = () => {
           Every success journey we’ve encountered.
         </div>
       </div>
-      <div className='flex justify-center space-x-32 mt-12'>
+      <div className='flex justify-evenly space-x-32 mt-12'>
         {/* Left Div */}
         <div className='relative'>
           <img
