@@ -1,12 +1,10 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import frame from '../images/frame.png'
+
 const FormDetails = () => {
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
   const [isValid, setIsValid] = useState(false)
-  const [errorMessage, setErrorMessage] = useState('')
-
 
   const handleChange = (event) => {
     const { name, value } = event.target
@@ -16,18 +14,9 @@ const FormDetails = () => {
       setEmail(value)
     }
     setIsValid(username.trim() !== '' && email.trim() !== '')
-
-    if (name === 'email') {
-      const isValidEmail = value.trim() !== '' && validateEmail(value)
-      setErrorMessage(isValidEmail ? '' : <span className='flex flex-row justify-start items-center font-manrope text-[#FF0808] space-y-2 mt-4'> <img src={frame} className='h-[15px] w-[15px] mr-2' alt="" /> Enter a valid email address</span>)
-    }
   }
 
-  const validateEmail = (email) => {
-    const re =
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    return re.test(String(email).toLowerCase())
-  }
+
   return (
     <form className='flex flex-col space-y-8'>
       <div className='flex flex-col'>
@@ -52,21 +41,21 @@ const FormDetails = () => {
           value={email}
           onChange={handleChange}
         />
-        {errorMessage && <div className='text-red-500'>{errorMessage}</div>}
       </div>
       <Link to='/form-success'>
-        <button
-          type='submit'
-          className={`rounded-full border border-[#EFEFEF] bg-[#000000] w-96 py-4 px-4 text-center text-white font-medium disabled:bg-[#C9C9C9] disabled:cursor-not-allowed ${
-            isValid ? '' : 'disabled'
-          }`}
-          disabled={!isValid} // Disable button if username or email is empty
-        >
-          Submit
-        </button>
+      <button
+        type='submit'
+        className={`rounded-full border border-[#EFEFEF] bg-[#000000] w-96 py-4 px-4 text-center text-white font-medium disabled:bg-[#C9C9C9] disabled:cursor-not-allowed ${
+          isValid ? '' : 'disabled'
+        }`}
+        disabled={!isValid} // Disable button if username or email is empty
+      >
+        Submit
+      </button>
       </Link>
     </form>
   )
 }
 
 export default FormDetails
+
