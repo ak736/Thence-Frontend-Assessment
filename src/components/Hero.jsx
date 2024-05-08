@@ -82,7 +82,7 @@ const Hero = () => {
             <div className='bg-[#E4E3E3] h-[10px] w-[10px] rounded-full'></div>
           </div>
           <div className='pt-16'>
-            <button className='rounded-full border-2 border-black px-6 py-4 bg-black text-white font-manrope flex items-center'>
+            <button className='rounded-full border-2 border-black px-6 py-4 bg-black text-white font-manrope flex items-center hover:bg-[#4E4E4E] hover:border-[#4E4E4E]'>
               Explore More{' '}
               <img src={arrow} className='h-[10px] w-[10px] ml-2' alt='' />
             </button>

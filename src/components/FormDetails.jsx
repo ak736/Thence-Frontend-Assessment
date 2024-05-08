@@ -57,7 +57,7 @@ const FormDetails = () => {
       <Link to='/form-success'>
         <button
           type='submit'
-          className={`rounded-full border border-[#EFEFEF] bg-[#000000] w-96 py-4 px-4 text-center text-white font-medium disabled:bg-[#C9C9C9] disabled:cursor-not-allowed ${
+          className={`rounded-full border border-[#EFEFEF] bg-[#000000] w-96 py-4 px-4 text-center text-white font-medium disabled:bg-[#C9C9C9] disabled:cursor-not-allowed hover:bg-[#4E4E4E] hover:border-[#4E4E4E] ${
             isValid ? '' : 'disabled'
           }`}
           disabled={!isValid} // Disable button if username or email is empty
